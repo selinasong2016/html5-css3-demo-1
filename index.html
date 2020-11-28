@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习html5和css3</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+
+        * {
+            box-sizing: border-box;
+            /*改变盒模型*/
+            padding: 0;
+            margin: 0;
+
+        }
+
+        @keyframes x {
+            from {
+                transform: rotate(0deg);
+                /*Transform属性应用于元素的2D或3D转换。
+                这个属性允许你将元素旋转，缩放，移动，倾斜等。*/
+                /*转换：旋转（0度）定义 2D 旋转，在参数中规定角度。*/
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #八卦 {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            animation: x 10s infinite linear;
+            /*动画：自己取一个名字  10秒执行一次 无限的执行  线性的执行*/
+            box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+            /*阴影*/
+        }
+
+        @media (max-width: 500px) {
+
+            /*媒体查询*/
+            #八卦 {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        #八卦>div:first-child {
+            position: absolute;
+            width: 50%;
+            left: 0;
+            height: 100%;
+            background-color: black;
+        }
+
+        #八卦>div:nth-child(2) {
+            position: absolute;
+            width: 50%;
+            right: 0;
+            height: 100%;
+            background-color: white;
+        }
+
+        #八卦>div:nth-child(3) {
+            position: absolute;
+            left: 25%;
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            border-radius: 100px;
+
+        }
+
+        @media(max-width:500px) {
+            #八卦>div:nth-child(3) {
+                position: absolute;
+                left: 25%;
+                width: 100px;
+                height: 100px;
+                background-color: black;
+                border-radius: 50%px;
+
+            }
+        }
+
+        #八卦>div:nth-child(4) {
+            position: absolute;
+            left: 25%;
+            width: 200px;
+            height: 200px;
+            bottom: 0;
+            background-color: white;
+            border-radius: 100px;
+        }
+
+        @media(max-width: 500px) {
+            #八卦>div:nth-child(4) {
+                position: absolute;
+                left: 25%;
+                width: 100px;
+                height: 100px;
+                bottom: 0;
+                background-color: white;
+                border-radius: 50%;
+            }
+        }
+
+        #八卦>div:nth-child(5) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            margin-left: -25px;
+            background-color: white;
+            border-radius: 25px;
+            top: 75px;
+        }
+
+        @media(max-width: 500px) {
+            #八卦>div:nth-child(5) {
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                left: 50%;
+                margin-left: -12.5px;
+                background-color: white;
+                border-radius: 12.5px;
+                top: 37.5px;
+            }
+        }
+
+        #八卦>div:nth-child(6) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            margin-left: -25px;
+            background-color: black;
+            border-radius: 25px;
+            bottom: 75px;
+        }
+
+        @media (max-width:500px) {
+            #八卦>div:nth-child(6) {
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                left: 50%;
+                margin-left: -12.5px;
+                background-color: black;
+                border-radius: 12.5px;
+                bottom: 37.5px;
+            }
+        }
+
+        #八卦-wrapper {
+
+            height: 100vh;
+            display: flex;
+            /*弹性布局 重点学习*/
+            justify-content: center;
+            /*元素在主轴（页面）上居中排列*/
+            align-items: center;
+            /*弹性盒子元素在该行的侧轴（纵轴）上居中放置*/
+            flex-direction: column;
+            /*属性规定灵活项目的方向：垂直显示(让元素沿垂直主轴从上到下垂直排列)*/
+        }
+
+        #八卦-description {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="八卦-wrapper">
+        <div id="八卦">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="八卦-description">道可道，非常道</div>
+    </div>
+</body>
+
+</html>
